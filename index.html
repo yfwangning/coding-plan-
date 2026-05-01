@@ -28,6 +28,18 @@
     />
     <meta name="twitter:image" content="/assets/og-image.svg" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23087a73'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='34' font-family='Arial' font-weight='700' fill='white'%3E%C2%A5%3C/text%3E%3C/svg%3E" />
+    <link rel="dns-prefetch" href="https://help.aliyun.com" />
+    <link rel="dns-prefetch" href="https://platform.kimi.com" />
+    <link rel="dns-prefetch" href="https://www.bigmodel.cn" />
+    <link rel="dns-prefetch" href="https://platform.minimaxi.com" />
+    <link rel="dns-prefetch" href="https://www.volcengine.com" />
+    <link rel="dns-prefetch" href="https://platform.xiaomimimo.com" />
+    <link rel="dns-prefetch" href="https://cloud.baidu.com" />
+    <link rel="dns-prefetch" href="https://cloud.tencent.com" />
+    <link rel="dns-prefetch" href="https://www.jdcloud.com" />
+    <link rel="dns-prefetch" href="https://www.xfyun.cn" />
+    <link rel="dns-prefetch" href="https://api-docs.deepseek.com" />
+    <link rel="dns-prefetch" href="https://longcat.chat" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -75,7 +87,6 @@
             <button class="filter-btn" type="button" data-filter="available" aria-pressed="false">Code Plan</button>
             <button class="filter-btn" type="button" data-filter="token" aria-pressed="false">Token Plan</button>
             <button class="filter-btn" type="button" data-filter="discount" aria-pressed="false">有优惠</button>
-            <button class="filter-btn" type="button" data-filter="needs-review" aria-pressed="false">待同步</button>
           </div>
           <label class="sort-control">
             <span>排序</span>
@@ -102,6 +113,13 @@
       </main>
     </div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="modal-overlay" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-panel">
+        <button class="modal-close" id="modal-close" type="button" aria-label="关闭">×</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
 
     <script src="./app.js"></script>
   </body>

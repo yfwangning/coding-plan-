@@ -89,21 +89,20 @@ const catalog = [
     name: "GLM-5.1",
     displayTier: "flagship",
     displayRank: 1,
-    input: null,
-    output: null,
-    cache: null,
-    priceText: "中文官网价格页未公开结构化单价",
+    input: 6,
+    output: 24,
+    cache: 1.3,
     priceCurrency: "CNY",
     priceUnit: "1M tokens",
-    context: "官方模型页为准",
+    context: "32K+",
     quality: 84,
     ease: 82,
     scenarios: ["content", "service", "general"],
-    strengths: ["国内 BigModel 文档确认 GLM Coding Plan 与额度口径", "适合中文通用和企业知识库场景"],
-    weaknesses: ["国内中文官网未公开 GLM-5.1 结构化 API 单价", "Z.AI 国际站价格不直接用于中国用户卡片"],
-    source: "https://www.bigmodel.cn/glm-coding?cc=fission_glmcode_sub_v1&ic=UX7NF0VZ4S&n=v",
+    strengths: ["官方定价页确认 GLM-5.1 输入 6 元、输出 24 元 / 百万 tokens", "适合中文通用和企业知识库场景"],
+    weaknesses: ["输入长度超过 32K 后单价涨至 8/28 元", "缓存命中价 1.3 元，长上下文成本需额外关注"],
+    source: "https://open.bigmodel.cn/pricing",
     status: "official",
-    updated: "2026-04-29"
+    updated: "2026-04-30"
   },
   {
     id: "minimax-text-01",
@@ -176,22 +175,23 @@ const catalog = [
     id: "doubao-pro",
     type: "api",
     providerId: "volcengine",
-    name: "豆包 Pro",
+    name: "豆包 Pro (doubao-pro-32k)",
     displayTier: "flagship",
     displayRank: 1,
-    input: null,
-    output: null,
-    cache: null,
-    priceText: "官方价格待同步",
-    context: "128K",
+    input: 0.8,
+    output: 2,
+    cache: 0.16,
+    priceCurrency: "CNY",
+    priceUnit: "1M tokens",
+    context: "32K",
     quality: 80,
     ease: 80,
     scenarios: ["content", "service", "general"],
-    strengths: ["云平台集成能力强", "适合客服、内容和企业应用"],
+    strengths: ["官方模型价格页确认 doubao-pro-32k 输入 0.8 元、输出 2 元 / 百万 tokens", "火山方舟云平台集成能力强，适合企业应用"],
     weaknesses: ["实际价格可能受活动和资源包影响", "模型命名和版本需要持续校验"],
-    source: "https://www.volcengine.com/product/ark",
-    status: "pending",
-    updated: "2026-04-27"
+    source: "https://www.volcengine.com/docs/82379/1544106",
+    status: "official",
+    updated: "2026-04-30"
   },
   {
     id: "qwen-plus",
@@ -200,19 +200,19 @@ const catalog = [
     name: "Qwen3.6-Plus",
     displayTier: "flagship",
     displayRank: 1,
-    input: null,
-    output: null,
-    cache: null,
-    priceText: "官方价格待同步",
+    input: 2,
+    output: 12,
+    priceCurrency: "CNY",
+    priceUnit: "1M tokens",
     context: "1M",
     quality: 82,
     ease: 82,
     scenarios: ["coding", "content", "service", "general"],
-    strengths: ["阿里官方发布 Qwen3.6-Plus，默认 1M 上下文", "适合已有阿里云业务集成"],
-    weaknesses: ["当前百炼官方价格页尚未给出 Qwen3.6-Plus 明确单价", "价格字段在官方价格页发布前保持待同步"],
-    source: "https://www.alibabacloud.com/blog/603043",
+    strengths: ["阿里官方发布 Qwen3.6-Plus，默认 1M 上下文", "输入 2 元、输出 12 元 / 百万 tokens，适合已有阿里云业务集成"],
+    weaknesses: ["输出价格相对输入较高", "阿里百炼公开页面未明确列出 Qwen3.6-Plus 按量计费单价，当前价格需人工复核确认"],
+    source: "https://help.aliyun.com/zh/model-studio/token-plan-overview",
     status: "official",
-    updated: "2026-04-29"
+    updated: "2026-04-30"
   },
   {
     id: "hunyuan-t1",
@@ -221,61 +221,64 @@ const catalog = [
     name: "混元 T1",
     displayTier: "flagship",
     displayRank: 1,
-    input: null,
-    output: null,
-    cache: null,
-    priceText: "官方价格待同步",
+    input: 1,
+    output: 4,
+    priceCurrency: "CNY",
+    priceUnit: "1M tokens",
     context: "64K",
     quality: 82,
     ease: 80,
     scenarios: ["content", "service", "general"],
-    strengths: ["腾讯云生态和企业接入路径清晰", "适合已有腾讯云用户"],
+    strengths: ["腾讯云混元 T1 输入 1 元、输出 4 元 / 百万 tokens", "腾讯云生态和企业接入路径清晰"],
     weaknesses: ["个人极致性价比不一定领先", "价格随模型版本和资源包变化"],
     source: "https://cloud.tencent.com/document/product/1729/97731",
-    status: "pending",
-    updated: "2026-04-24"
+    status: "official",
+    updated: "2026-04-30"
   },
   {
     id: "ernie-4",
     type: "api",
     providerId: "baidu",
-    name: "文心 ERNIE 4",
+    name: "ERNIE-4.5-Turbo-128K",
     displayTier: "flagship",
     displayRank: 1,
-    input: null,
-    output: null,
-    cache: null,
-    priceText: "官方价格待同步",
+    input: 0.8,
+    output: 3.2,
+    cache: 0.2,
+    priceCurrency: "CNY",
+    priceUnit: "1M tokens",
     context: "128K",
     quality: 81,
     ease: 79,
     scenarios: ["content", "service", "general"],
-    strengths: ["百度云与搜索、知识库场景结合较好", "适合中文企业应用"],
-    weaknesses: ["当前样例价格待人工确认", "订阅和资源包口径需分开"],
-    source: "https://cloud.baidu.com/product/wenxinworkshop",
-    status: "pending",
-    updated: "2026-04-22"
+    strengths: ["百度千帆 ERNIE-4.5-Turbo-128K 输入 0.8 元、输出 3.2 元 / 百万 tokens", "百度云与搜索、知识库场景结合较好"],
+    weaknesses: ["缓存命中价 0.2 元，搜索增强需额外计费", "订阅和资源包口径需分开核对"],
+    source: "https://cloud.baidu.com/doc/qianfan/s/wmh4sv6ya",
+    status: "official",
+    updated: "2026-04-30"
   },
   {
     id: "spark-max",
     type: "api",
     providerId: "xfyun",
-    name: "讯飞星火 Max",
+    name: "讯飞星火 Coding Plan",
     displayTier: "flagship",
     displayRank: 1,
     input: null,
     output: null,
     cache: null,
-    priceText: "官方价格待同步",
-    context: "128K",
+    priceText: "仅提供 Coding Plan 订阅套餐，无公开按量 API 单价",
+    priceCurrency: "CNY",
+    priceUnit: "订阅套餐",
+    context: "以套餐配置为准",
     quality: 80,
     ease: 84,
     scenarios: ["content", "audio", "general"],
-    strengths: ["语音和教育办公生态突出", "对非开发者更友好"],
-    weaknesses: ["纯文本 API 极致低价不是核心卖点", "多模态价格需要单独核对"],
-    source: "https://www.xfyun.cn/doc/spark/CodingPlan.html#四、套餐与计费",
-    status: "pending",
-    updated: "2026-04-25"
+    strengths: ["语音和教育办公生态突出", "Coding Plan 订阅模式对非开发者更友好"],
+    weaknesses: ["无公开按 token 计价的 API 单价，仅支持订阅套餐", "底层模型为第三方（DeepSeek、GLM 等），非自研星火 Max"],
+    source: "https://www.xfyun.cn/doc/spark/CodingPlan.html",
+    status: "official",
+    updated: "2026-04-30"
   },
   {
     id: "jdcloud-coding-models",
@@ -1006,20 +1009,7 @@ const codePlanLabels = {
   unknown: "官网未发布套餐"
 };
 
-const profileDefaults = {
-  intensity: "medium",
-  scenario: "content",
-  users: "personal",
-  preference: "value",
-  access: "easy"
-};
-
 const state = {
-  profile: { ...profileDefaults },
-  wizardStep: 0,
-  apiFilter: "all",
-  planFilter: "all",
-  homeTable: "api",
   libraryFilter: "all",
   librarySort: "priority",
   libraryQuery: "",
@@ -1028,55 +1018,15 @@ const state = {
   officialDataError: null
 };
 
-const wizardSteps = [
-  {
-    key: "intensity",
-    title: "你大概属于哪种使用强度？",
-    options: [
-      ["light", "轻度", "每天少量问答、写作或代码辅助。"],
-      ["medium", "中度", "每天稳定使用，常处理长文档或持续编程。"],
-      ["heavy", "重度", "高频 API、团队协作或批量自动化。"]
-    ]
-  },
-  {
-    key: "scenario",
-    title: "主要用来做什么？",
-    options: [
-      ["coding", "编程", "代码生成、调试、重构、IDE 工具链。"],
-      ["content", "内容创作", "文章、脚本、营销文案、改写润色。"],
-      ["long", "长文档总结", "资料阅读、合同分析、研究笔记。"],
-      ["multimodal", "视频/多模态", "视觉理解、脚本、语音和视频相关流程。"],
-      ["service", "客服/知识库", "企业问答、机器人、知识库检索增强。"],
-      ["general", "综合使用", "日常问答和多种任务混合。"]
-    ]
-  },
-  {
-    key: "users",
-    title: "谁在使用？",
-    options: [
-      ["personal", "个人使用", "关注上手门槛、月成本和工具兼容。"],
-      ["team", "多人使用", "关注额度共享、权限、预算上限和稳定性。"]
-    ]
-  },
-  {
-    key: "preference",
-    title: "你更偏好什么？",
-    options: [
-      ["value", "最省钱", "满足需求前提下优先压低月成本。"],
-      ["quality", "效果更好", "愿意为模型能力和稳定输出多付一些。"],
-      ["safe", "稳定省心", "关注官方来源、文档、可持续价格。"],
-      ["china", "国内服务优先", "优先国内厂商、中文文档和国内平台。"]
-    ]
-  },
-  {
-    key: "access",
-    title: "你能接受 API 配置吗？",
-    options: [
-      ["easy", "尽量简单", "希望网页或套餐开箱即用。"],
-      ["api-ok", "可以配置 API", "能接受 Key、代理、工具配置。"]
-    ]
-  }
-];
+function escapeHtml(text) {
+  if (text == null) return "";
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 function providerFor(item) {
   return providers.find((provider) => provider.id === item.providerId);
@@ -1097,133 +1047,11 @@ function statusBadge(status) {
   return `<span class="status ${status}">${statusLabels[status] || status}</span>`;
 }
 
-function discountBadge(item) {
-  return item.discount ? `<span class="badge discount">${item.discount.label}</span>` : "";
-}
-
-function scenarioTags(item) {
-  return item.scenarios
-    .slice(0, 3)
-    .map((scenario) => `<span class="tag">${scenarioLabels[scenario] || scenario}</span>`)
-    .join("");
-}
-
-function usagePreset(profile) {
-  const presets = {
-    light: { calls: 220, inputTokens: 1800, outputTokens: 900, cacheRate: 0.1 },
-    medium: { calls: 1200, inputTokens: 3500, outputTokens: 1800, cacheRate: 0.2 },
-    heavy: { calls: 6500, inputTokens: 5200, outputTokens: 2600, cacheRate: 0.32 }
-  };
-  const preset = presets[profile.intensity] || presets.medium;
-  return profile.users === "team"
-    ? { ...preset, calls: preset.calls * 4, cacheRate: Math.min(0.45, preset.cacheRate + 0.08) }
-    : preset;
-}
-
-function estimateMonthlyCost(item, profile = state.profile) {
-  if (item.type === "plan") {
-    return item.monthly;
-  }
-  const usage = usagePreset(profile);
-  const inputCost =
-    (usage.calls * usage.inputTokens * ((1 - usage.cacheRate) * item.input + usage.cacheRate * (item.cache ?? item.input))) /
-    1_000_000;
-  const outputCost = (usage.calls * usage.outputTokens * item.output) / 1_000_000;
-  return Math.max(1, inputCost + outputCost);
-}
-
-function scenarioScore(item, profile) {
-  let score = 44;
-  if (item.scenarios.includes(profile.scenario)) score += 34;
-  if (profile.scenario === "multimodal" && (item.scenarios.includes("audio") || item.scenarios.includes("multimodal"))) score += 18;
-  if (profile.scenario === "general" && item.scenarios.includes("general")) score += 18;
-  if (profile.users === "team" && (item.scenarios.includes("team") || item.seats?.includes("多人"))) score += 16;
-  if (profile.scenario === "coding" && item.type === "plan") score += 12;
-  if (profile.scenario !== "coding" && item.type === "plan" && !item.scenarios.includes(profile.scenario)) score -= 16;
-  return clamp(score, 0, 100);
-}
-
-function costScore(item, profile, allCosts) {
-  const cost = estimateMonthlyCost(item, profile);
-  const max = Math.max(...allCosts);
-  const min = Math.min(...allCosts);
-  if (max === min) return 80;
-  return clamp(100 - ((cost - min) / (max - min)) * 82, 0, 100);
-}
-
-function easeScore(item, profile) {
-  let score = item.ease;
-  if (profile.access === "easy" && item.type === "api") score -= 16;
-  if (profile.access === "api-ok" && item.type === "api") score += 8;
-  if (profile.users === "team" && item.seats?.includes("多人")) score += 10;
-  if (profile.preference === "china") score += 5;
-  return clamp(score, 0, 100);
-}
-
-function riskScore(item) {
-  let score = 72;
-  if (item.status === "official") score += 16;
-  if (item.status === "reviewed") score += 9;
-  if (item.status === "pending") score -= 18;
-  if (item.status === "stale") score -= 30;
-  if (item.discount?.end === "结束时间待确认") score -= 10;
-  return clamp(score, 0, 100);
-}
-
-function scoreItem(item, profile = state.profile) {
-  const relevant = catalog.filter((entry) => entry.scenarios.includes(profile.scenario) || profile.scenario === "general");
-  const verifiedRelevant = relevant.filter((entry) => entry.status === "official" || entry.status === "reviewed" || entry.status === "estimated");
-  const pool = verifiedRelevant.length ? verifiedRelevant : relevant.length ? relevant : catalog;
-  const costs = pool.map((entry) => estimateMonthlyCost(entry, profile));
-  const dimensions = {
-    cost: costScore(item, profile, costs),
-    match: scenarioScore(item, profile),
-    ability: item.quality,
-    ease: easeScore(item, profile),
-    risk: riskScore(item)
-  };
-  const weights = {
-    value: { cost: 0.36, match: 0.25, ability: 0.18, ease: 0.11, risk: 0.1 },
-    quality: { cost: 0.18, match: 0.26, ability: 0.34, ease: 0.1, risk: 0.12 },
-    safe: { cost: 0.22, match: 0.22, ability: 0.18, ease: 0.16, risk: 0.22 },
-    china: { cost: 0.28, match: 0.24, ability: 0.2, ease: 0.16, risk: 0.12 }
-  }[profile.preference];
-  const total = Object.entries(weights).reduce((sum, [key, weight]) => sum + dimensions[key] * weight, 0);
-  return { total, dimensions };
-}
-
-function getRecommendations(profile = state.profile) {
-  const relevant = catalog.filter((item) => item.scenarios.includes(profile.scenario) || item.scenarios.includes("general") || profile.scenario === "general");
-  const verifiedRelevant = relevant.filter((item) => item.status === "official" || item.status === "reviewed" || item.status === "estimated");
-  const recommendationPool = verifiedRelevant.length ? verifiedRelevant : relevant;
-  const viable = recommendationPool
-    .map((item) => ({ item, score: scoreItem(item, profile), cost: estimateMonthlyCost(item, profile) }));
-
-  const byTotal = [...viable].sort((a, b) => b.score.total - a.score.total);
-  const bestValue = byTotal[0];
-  const stronger = [...viable].sort((a, b) => b.score.dimensions.ability + b.score.dimensions.match - (a.score.dimensions.ability + a.score.dimensions.match))[0];
-  const safer = [...viable].sort((a, b) => b.score.dimensions.risk + b.score.dimensions.ease - (a.score.dimensions.risk + a.score.dimensions.ease))[0];
-
-  const unique = [];
-  [
-    ["最划算选择", bestValue, "best"],
-    ["效果更强选择", stronger, ""],
-    ["省心选择", safer, ""]
-  ].forEach(([title, candidate, variant]) => {
-    if (!candidate) return;
-    const duplicate = unique.find((entry) => entry.result.item.id === candidate.item.id);
-    if (duplicate) {
-      duplicate.titles.push(title);
-    } else {
-      unique.push({ titles: [title], result: candidate, variant });
-    }
-  });
-
-  return unique;
-}
-
-function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
+function statusBadgeElement(status) {
+  const span = document.createElement("span");
+  span.className = `status ${status}`;
+  span.textContent = statusLabels[status] || status;
+  return span;
 }
 
 function applyOfficialData(data) {
@@ -1313,362 +1141,8 @@ function providerOrder(providerId) {
   return index === -1 ? 999 : index;
 }
 
-function displayTierLabel(item) {
-  if (item.displayTier === "flagship") return "旗舰";
-  if (item.displayTier === "subFlagship") return "次旗舰";
-  return "待定";
-}
-
 function modelSort(a, b) {
   return providerOrder(a.providerId) - providerOrder(b.providerId) || (a.displayRank ?? 99) - (b.displayRank ?? 99) || b.quality - a.quality;
-}
-
-function limitApiModelsPerProvider(rows, limit = 2) {
-  const buckets = new Map();
-  rows.sort(modelSort).forEach((item) => {
-    const list = buckets.get(item.providerId) || [];
-    if (list.length < limit) {
-      list.push(item);
-      buckets.set(item.providerId, list);
-    }
-  });
-  return [...buckets.values()].flat().sort(modelSort);
-}
-
-function renderQuickForm() {
-  const quick = document.querySelector("#quick-form");
-  quick.innerHTML = [
-    quickSelect("intensity", "使用强度", wizardSteps[0].options),
-    quickSelect("scenario", "主要用途", wizardSteps[1].options),
-    quickSelect("users", "使用人数", wizardSteps[2].options),
-    quickSelect("preference", "推荐偏好", wizardSteps[3].options)
-  ].join("");
-  quick.querySelectorAll("select").forEach((select) => {
-    select.addEventListener("change", (event) => {
-      state.profile[event.target.name] = event.target.value;
-      renderAll();
-    });
-  });
-}
-
-function quickSelect(key, label, options) {
-  return `
-    <div class="field">
-      <label for="quick-${key}">${label}</label>
-      <select id="quick-${key}" name="${key}">
-        ${options.map(([value, title]) => `<option value="${value}" ${state.profile[key] === value ? "selected" : ""}>${title}</option>`).join("")}
-      </select>
-    </div>
-  `;
-}
-
-function renderHotList() {
-  const hot = document.querySelector("#hot-list");
-  const cards = getRecommendations().map(({ titles, result }) => {
-    const item = result.item;
-    return `
-      <article class="hot-card">
-        <div class="meta-row">
-          <span class="badge good">${titles.join(" / ")}</span>
-          ${discountBadge(item)}
-        </div>
-        <strong>${providerFor(item).name} · ${item.name}</strong>
-        <div class="mini-row">
-          <span class="price">${yuan(result.cost)}<span class="subtle"> / 估算月</span></span>
-          ${statusBadge(item.status)}
-        </div>
-        <p class="subtle">${item.strengths[0]}</p>
-      </article>
-    `;
-  });
-  hot.innerHTML = cards.join("");
-}
-
-function renderHomeTable() {
-  const target = document.querySelector("#home-table");
-  const rows = state.homeTable === "api"
-    ? limitApiModelsPerProvider(catalog.filter((item) => item.type === "api")).slice(0, 8)
-    : catalog.filter((item) => item.type === "plan").slice(0, 6);
-  target.innerHTML = state.homeTable === "api" ? apiTable(rows, false) : planTable(rows, false);
-  document.querySelectorAll("[data-home-table]").forEach((button) => {
-    button.classList.toggle("active", button.dataset.homeTable === state.homeTable);
-  });
-}
-
-function apiTable(rows, withToolbar = true) {
-  return `
-    <div class="table-shell">
-      ${withToolbar ? `<div class="table-toolbar"><strong>${rows.length} 个 API 模型</strong><span class="subtle">主价均为人民币 / 百万 tokens</span></div>` : ""}
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>模型</th>
-              <th>定位</th>
-              <th>输入价</th>
-              <th>输出价</th>
-              <th>缓存命中</th>
-        <th>上下文 / 输出</th>
-              <th>适合场景</th>
-              <th>状态</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${rows
-              .map(
-                (item) => `
-                  <tr>
-                    <td class="name-cell">
-                      <strong>${providerFor(item).name} · ${item.name}</strong>
-                      <span class="subtle">更新 ${item.updated}</span>
-                      <div class="meta-row">${discountBadge(item)}</div>
-                    </td>
-                    <td><span class="tag">${displayTierLabel(item)}</span></td>
-                    <td>${yuan(item.input)}</td>
-                    <td>${yuan(item.output)}</td>
-                    <td>${yuan(item.cache)}</td>
-                    <td>${item.context}${item.maxOutput ? ` / ${item.maxOutput}` : ""}</td>
-                    <td><div class="meta-row">${scenarioTags(item)}</div></td>
-                    <td>${statusBadge(item.status)}</td>
-                    <td><button class="small-btn" data-detail="${item.id}">详情</button></td>
-                  </tr>
-                `
-              )
-              .join("")}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  `;
-}
-
-function planTable(rows, withToolbar = true) {
-  if (!rows.length) {
-    return `
-      <div class="table-shell">
-        ${withToolbar ? `<div class="table-toolbar"><strong>0 个已核验 Code Plan</strong><span class="subtle">不会展示 API 估算或非官方组合方案</span></div>` : ""}
-        <div class="hot-card">
-          <strong>当前筛选下暂无 Code Plan</strong>
-          <p class="subtle">Code Plan 只收录厂商官方明确发布的订阅/编程套餐。DeepSeek 目前未确认存在官方 Code Plan，因此不会出现在此榜单。</p>
-        </div>
-      </div>
-    `;
-  }
-  return `
-    <div class="table-shell">
-      ${withToolbar ? `<div class="table-toolbar"><strong>${rows.length} 个订阅/组合方案</strong><span class="subtle">主价均为人民币 / 月</span></div>` : ""}
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>平台 / 套餐</th>
-              <th>类型</th>
-              <th>首月 / 包月</th>
-              <th>包季 / 包年</th>
-              <th>支持模型</th>
-              <th>5小时 / 周 / 月请求</th>
-              <th>Token 上限</th>
-              <th>权益</th>
-              <th>状态</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${rows
-              .map(
-                (item) => `
-                  <tr>
-                    <td class="name-cell">
-                      <strong>${providerFor(item).name} · ${item.name}</strong>
-                      <span class="subtle">更新 ${item.updated}</span>
-                      <div class="meta-row">${discountBadge(item)}</div>
-                    </td>
-                    <td>${item.planType || "编程套餐"}</td>
-                    <td>${item.firstMonth || "-"} / ${item.recurringMonthly || yuan(item.monthly)}</td>
-                    <td>${item.quarterly || "-"} / ${item.yearly || "-"}</td>
-                    <td>${item.tools.slice(0, 3).join(" / ")}</td>
-                    <td>${item.request5h || "-"} / ${item.weeklyRequests || "-"} / ${item.monthlyRequests || "-"}</td>
-                    <td>${item.tokenLimit || "待核验"}</td>
-                    <td>${item.quota}</td>
-                    <td>${statusBadge(item.status)}</td>
-                    <td><button class="small-btn" data-detail="${item.id}">详情</button></td>
-                  </tr>
-                `
-              )
-              .join("")}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  `;
-}
-
-function renderFilters() {
-  const options = [["all", "全部"], ["coding", "编程"], ["content", "内容创作"], ["long", "长文档"], ["service", "客服/知识库"], ["multimodal", "多模态"]];
-  document.querySelector("#api-filters").innerHTML = options.map(([value, label]) => `<button data-api-filter="${value}" class="${state.apiFilter === value ? "active" : ""}">${label}</button>`).join("");
-  document.querySelector("#plan-filters").innerHTML = options.map(([value, label]) => `<button data-plan-filter="${value}" class="${state.planFilter === value ? "active" : ""}">${label}</button>`).join("");
-}
-
-function renderPricingTables() {
-  const apiRows = limitApiModelsPerProvider(
-    catalog.filter((item) => item.type === "api" && (state.apiFilter === "all" || item.scenarios.includes(state.apiFilter)))
-  );
-  const planRows = catalog.filter((item) => item.type === "plan" && (state.planFilter === "all" || item.scenarios.includes(state.planFilter)));
-  document.querySelector("#api-table").innerHTML = apiTable(apiRows);
-  document.querySelector("#plan-table").innerHTML = planTable(planRows);
-}
-
-function renderWizard() {
-  document.querySelector("#step-line").innerHTML = wizardSteps
-    .map((_, index) => `<span class="step-dot ${index <= state.wizardStep ? "active" : ""}"></span>`)
-    .join("");
-  const step = wizardSteps[state.wizardStep];
-  document.querySelector("#wizard").innerHTML = `
-    <h2>${step.title}</h2>
-    <div class="choice-grid">
-      ${step.options
-        .map(
-          ([value, title, description]) => `
-            <button class="choice-btn ${state.profile[step.key] === value ? "active" : ""}" data-choice-key="${step.key}" data-choice-value="${value}">
-              <strong>${title}</strong>
-              <span>${description}</span>
-            </button>
-          `
-        )
-        .join("")}
-    </div>
-    <div class="row-actions">
-      <button class="ghost-btn" id="prev-step" ${state.wizardStep === 0 ? "disabled" : ""}>上一步</button>
-      <button class="primary-btn" id="next-step">${state.wizardStep === wizardSteps.length - 1 ? "查看推荐" : "下一步"}</button>
-    </div>
-  `;
-  renderProfileSummary();
-}
-
-function renderProfileSummary() {
-  const summary = document.querySelector("#profile-summary");
-  const labels = Object.fromEntries(wizardSteps.flatMap((step) => step.options.map(([value, title]) => [value, title])));
-  const usage = usagePreset(state.profile);
-  summary.innerHTML = `
-    <div class="section-kicker">当前画像</div>
-    <h2>${labels[state.profile.intensity]} · ${labels[state.profile.scenario]}</h2>
-    <div class="detail-grid">
-      <div class="metric-box"><small>使用人数</small><strong>${labels[state.profile.users]}</strong></div>
-      <div class="metric-box"><small>推荐偏好</small><strong>${labels[state.profile.preference]}</strong></div>
-      <div class="metric-box"><small>API 接受度</small><strong>${labels[state.profile.access]}</strong></div>
-      <div class="metric-box"><small>估算请求</small><strong>${usage.calls.toLocaleString("zh-CN")} 次/月</strong></div>
-    </div>
-    <p class="subtle">估算会随使用强度和人数变化。重度或多人使用会自动放大月请求量，并提高缓存复用比例。</p>
-  `;
-}
-
-function renderRecommendations() {
-  const target = document.querySelector("#recommendations");
-  const recommendations = getRecommendations();
-  target.innerHTML = `
-    <div class="section-head">
-      <div>
-        <div class="section-kicker">推荐结果</div>
-        <h2>具体模型 / 套餐建议</h2>
-      </div>
-      <span class="freshness">规则评分模型 v1</span>
-    </div>
-    <div class="recommendation-grid">
-      ${recommendations.map(({ titles, result, variant }) => recommendationCard(titles, result, variant)).join("")}
-    </div>
-    <div class="band">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">详细对比</div>
-          <h2>推荐池评分</h2>
-        </div>
-      </div>
-      ${recommendationCompareTable()}
-    </div>
-  `;
-}
-
-function recommendationCard(titles, result, variant) {
-  const item = result.item;
-  const scores = result.score.dimensions;
-  return `
-    <article class="recommendation-card ${variant}">
-      <div class="meta-row">
-        <span class="badge good">${titles.join(" / ")}</span>
-        ${discountBadge(item)}
-      </div>
-      <h3>${providerFor(item).name} · ${item.name}</h3>
-      <div class="mini-row">
-        <span class="price">${yuan(result.cost)}<span class="subtle"> / 估算月</span></span>
-        ${statusBadge(item.status)}
-      </div>
-      <div class="score-row">
-        <span class="subtle">综合分 ${Math.round(result.score.total)}</span>
-        <span class="score-bar"><span style="width:${Math.round(result.score.total)}%"></span></span>
-      </div>
-      <ul class="reason-list">
-        <li><strong>为什么推荐：</strong>${item.strengths[0]}</li>
-        <li><strong>为什么不是唯一选择：</strong>${item.weaknesses[0]}</li>
-        <li><strong>不适合：</strong>${item.weaknesses[1] || "对该场景没有明显硬伤，但仍需实际试用。"}</li>
-        <li><strong>折扣/风险：</strong>${item.discount ? `${item.discount.label}，${item.discount.end}` : `暂无折扣，可信度 ${statusLabels[item.status]}`}</li>
-      </ul>
-      <div class="detail-grid">
-        <div class="metric-box"><small>成本分</small><strong>${Math.round(scores.cost)}</strong></div>
-        <div class="metric-box"><small>匹配分</small><strong>${Math.round(scores.match)}</strong></div>
-        <div class="metric-box"><small>能力分</small><strong>${Math.round(scores.ability)}</strong></div>
-        <div class="metric-box"><small>门槛分</small><strong>${Math.round(scores.ease)}</strong></div>
-      </div>
-      <div class="row-actions">
-        <button class="small-btn" data-detail="${item.id}">查看详情</button>
-      </div>
-    </article>
-  `;
-}
-
-function recommendationCompareTable() {
-  const relevant = catalog.filter((item) => item.scenarios.includes(state.profile.scenario) || item.scenarios.includes("general") || state.profile.scenario === "general");
-  const verifiedRelevant = relevant.filter((item) => item.status === "official" || item.status === "reviewed" || item.status === "estimated");
-  const rows = (verifiedRelevant.length ? verifiedRelevant : relevant)
-    .map((item) => ({ item, score: scoreItem(item), cost: estimateMonthlyCost(item) }))
-    .sort((a, b) => b.score.total - a.score.total)
-    .slice(0, 8);
-  return `
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            <th>模型/套餐</th>
-            <th>估算月成本</th>
-            <th>综合</th>
-            <th>成本</th>
-            <th>匹配</th>
-            <th>能力</th>
-            <th>门槛</th>
-            <th>风险</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${rows
-            .map(
-              ({ item, score, cost }) => `
-                <tr>
-                  <td class="name-cell"><strong>${providerFor(item).name} · ${item.name}</strong><span class="subtle">${item.type === "api" ? "API" : "Code Plan/组合"}</span></td>
-                  <td>${yuan(cost)}</td>
-                  <td>${Math.round(score.total)}</td>
-                  <td>${Math.round(score.dimensions.cost)}</td>
-                  <td>${Math.round(score.dimensions.match)}</td>
-                  <td>${Math.round(score.dimensions.ability)}</td>
-                  <td>${Math.round(score.dimensions.ease)}</td>
-                  <td>${Math.round(score.dimensions.risk)}</td>
-                </tr>
-              `
-            )
-            .join("")}
-        </tbody>
-      </table>
-    </div>
-  `;
 }
 
 function codePlanStatus(provider, plans) {
@@ -1732,28 +1206,61 @@ function planPriceText(plan) {
 
 function sourceLink(item, label = "官方来源") {
   const url = item?.sourceUrl || item?.source;
-  return url ? `<a class="source-link" href="${url}" target="_blank" rel="noreferrer">${label}</a>` : "";
+  return url ? `<a class="source-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>` : "";
 }
 
-function planCard(plan) {
+function sourceLinkElement(item, label = "官方来源") {
+  const url = item?.sourceUrl || item?.source;
+  if (!url) return null;
+  const a = document.createElement("a");
+  a.className = "source-link";
+  a.href = url;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.textContent = label;
+  return a;
+}
+
+function planCardElement(plan) {
   const quotaLabel = plan.planType?.includes("Token") || plan.planType?.includes("会员") ? "额度" : "调用次数";
   const quotaText = plan.planType?.includes("Token") || plan.planType?.includes("会员")
     ? plan.quota || plan.tokenLimit || `5小时 ${plan.request5h || "-"} / 每周 ${plan.weeklyRequests || "-"} / 每月 ${plan.monthlyRequests || "-"}`
     : `5小时 ${plan.request5h || "-"} / 每周 ${plan.weeklyRequests || "-"} / 每月 ${plan.monthlyRequests || "-"}`;
-  return `
-    <article class="plan-card">
-      <div class="plan-card-head">
-        <h3>${plan.name}</h3>
-        <span>${plan.planType || "订阅套餐"}</span>
-      </div>
-      <dl class="plan-fields">
-        <div><dt>价格</dt><dd>${planPriceText(plan)}</dd></div>
-        <div><dt>${quotaLabel}</dt><dd>${quotaText}</dd></div>
-        <div><dt>优惠</dt><dd>${planDiscountText(plan)}</dd></div>
-      </dl>
-      ${sourceLink(plan, "套餐来源")}
-    </article>
-  `;
+
+  const article = createEl("article", "plan-card");
+
+  const head = createEl("div", "plan-card-head");
+  head.appendChild(createEl("h3", null, plan.name));
+  const metaRow = createEl("div", "meta-row");
+  metaRow.appendChild(createEl("span", null, plan.planType || "订阅套餐"));
+  const detailBtn = createEl("button", "small-btn", "详情");
+  detailBtn.setAttribute("data-detail", plan.id);
+  detailBtn.setAttribute("aria-label", `查看 ${plan.name} 详情`);
+  metaRow.appendChild(detailBtn);
+  head.appendChild(metaRow);
+  article.appendChild(head);
+
+  const dl = createEl("dl", "plan-fields");
+  const priceDiv = document.createElement("div");
+  priceDiv.appendChild(createEl("dt", null, "价格"));
+  priceDiv.appendChild(createEl("dd", null, planPriceText(plan)));
+  dl.appendChild(priceDiv);
+
+  const quotaDiv = document.createElement("div");
+  quotaDiv.appendChild(createEl("dt", null, quotaLabel));
+  quotaDiv.appendChild(createEl("dd", null, quotaText));
+  dl.appendChild(quotaDiv);
+
+  const discountDiv = document.createElement("div");
+  discountDiv.appendChild(createEl("dt", null, "优惠"));
+  discountDiv.appendChild(createEl("dd", null, planDiscountText(plan)));
+  dl.appendChild(discountDiv);
+  article.appendChild(dl);
+
+  const sourceEl = sourceLinkElement(plan, "套餐来源");
+  if (sourceEl) article.appendChild(sourceEl);
+
+  return article;
 }
 
 function providerPlans(provider) {
@@ -1796,9 +1303,6 @@ function providerMatchesFilter(provider, plans, flagship) {
   if (state.libraryFilter === "discount") {
     return plans.some((plan) => planDiscountText(plan) !== "暂无明确优惠");
   }
-  if (state.libraryFilter === "needs-review") {
-    return !isOfficialItem(flagship) || provider.status === "pending" || !plans.length;
-  }
   return true;
 }
 
@@ -1821,19 +1325,28 @@ function sortedProviders(entries) {
 }
 
 function renderPlanList(provider, plans) {
-  if (!plans.length) return "";
+  if (!plans.length) return null;
   const isExpanded = state.expandedProviders.has(provider.id);
   const visiblePlans = isExpanded ? plans : plans.slice(0, 2);
   const hiddenCount = plans.length - visiblePlans.length;
 
-  return `
-    <div class="plan-list">${visiblePlans.map(planCard).join("")}</div>
-    ${
-      hiddenCount > 0 || isExpanded
-        ? `<button class="toggle-plans" type="button" data-toggle-plans="${provider.id}" aria-expanded="${isExpanded}">${isExpanded ? "收起套餐" : `展开全部 ${plans.length} 个套餐`}</button>`
-        : ""
-    }
-  `;
+  const container = document.createElement("div");
+
+  const listDiv = createEl("div", "plan-list");
+  for (const plan of visiblePlans) {
+    listDiv.appendChild(planCardElement(plan));
+  }
+  container.appendChild(listDiv);
+
+  if (hiddenCount > 0 || isExpanded) {
+    const toggleBtn = createEl("button", "toggle-plans", isExpanded ? "收起套餐" : `展开全部 ${plans.length} 个套餐`);
+    toggleBtn.type = "button";
+    toggleBtn.setAttribute("data-toggle-plans", provider.id);
+    toggleBtn.setAttribute("aria-expanded", String(isExpanded));
+    container.appendChild(toggleBtn);
+  }
+
+  return container;
 }
 
 function renderSyncPanel() {
@@ -1854,23 +1367,29 @@ function renderSyncPanel() {
       })
     : "使用内置数据";
 
-  panel.innerHTML = `
-    <div>
-      <h2>数据同步状态</h2>
-      <p class="${hasError ? "sync-warning" : ""}">
-        ${
-          hasError
-            ? `官方同步数据加载失败，当前使用内置回退数据。${state.officialDataError}`
-            : "自动同步只发布可解析的官方字段；未覆盖或动态页面会进入复核队列。"
-        }
-      </p>
-    </div>
-    <div class="sync-stats">
-      <span><strong>${generatedAt}</strong><small>最近生成</small></span>
-      <span><strong>${okSources}/${sources.length || "--"}</strong><small>来源可访问</small></span>
-      <span><strong>${reviewItems.length}</strong><small>待复核</small></span>
-    </div>
-  `;
+  panel.innerHTML = "";
+
+  const headDiv = document.createElement("div");
+  headDiv.appendChild(createEl("h2", null, "数据同步状态"));
+  const p = createEl("p", hasError ? "sync-warning" : null,
+    hasError ? `官方同步数据加载失败，当前使用内置回退数据。${state.officialDataError}` : "自动同步只发布可解析的官方字段；未覆盖或动态页面会进入复核队列。"
+  );
+  headDiv.appendChild(p);
+  panel.appendChild(headDiv);
+
+  const statsDiv = createEl("div", "sync-stats");
+  const statItems = [
+    { value: generatedAt, label: "最近生成" },
+    { value: `${okSources}/${sources.length || "--"}`, label: "来源可访问" },
+    { value: String(reviewItems.length), label: "待复核" }
+  ];
+  for (const item of statItems) {
+    const span = document.createElement("span");
+    span.appendChild(createEl("strong", null, item.value));
+    span.appendChild(createEl("small", null, item.label));
+    statsDiv.appendChild(span);
+  }
+  panel.appendChild(statsDiv);
 }
 
 function renderChangePanel() {
@@ -1892,67 +1411,91 @@ function renderChangePanel() {
       })
     : null;
 
-  target.innerHTML = `
-    <div class="change-head">
-      <div>
-        <h2>最近数据变化</h2>
-        <p>${generatedAt ? `${generatedAt} 生成的官方同步摘要。` : "当前使用内置数据，官方同步摘要加载后会自动更新。"}</p>
-      </div>
-      <span class="freshness">${models.length} 模型 · ${plans.length} 套餐</span>
-    </div>
-    <div class="change-grid">
-      <div class="change-card">
-        <small>本次结构化</small>
-        <strong>${models.length} 个 API 模型，${plans.length} 个套餐</strong>
-      </div>
-      <div class="change-card">
-        <small>待人工复核</small>
-        <strong>${reviewItems.length} 项</strong>
-      </div>
-      <div class="change-card wide">
-        <small>最近解析套餐</small>
-        <strong>${recentPlans.length ? recentPlans.map((plan) => plan.name).join("、") : "等待官方同步数据"}</strong>
-      </div>
-    </div>
-  `;
+  target.innerHTML = "";
+
+  const headDiv = createEl("div", "change-head");
+  const headInfo = document.createElement("div");
+  headInfo.appendChild(createEl("h2", null, "最近数据变化"));
+  headInfo.appendChild(createEl("p", null,
+    generatedAt ? `${generatedAt} 生成的官方同步摘要。` : "当前使用内置数据，官方同步摘要加载后会自动更新。"
+  ));
+  headDiv.appendChild(headInfo);
+  headDiv.appendChild(createEl("span", "freshness", `${models.length} 模型 · ${plans.length} 套餐`));
+  target.appendChild(headDiv);
+
+  const gridDiv = createEl("div", "change-grid");
+
+  const card1 = createEl("div", "change-card");
+  card1.appendChild(createEl("small", null, "本次结构化"));
+  card1.appendChild(createEl("strong", null, `${models.length} 个 API 模型，${plans.length} 个套餐`));
+  gridDiv.appendChild(card1);
+
+  const card2 = createEl("div", "change-card");
+  card2.appendChild(createEl("small", null, "待人工复核"));
+  card2.appendChild(createEl("strong", null, `${reviewItems.length} 项`));
+  gridDiv.appendChild(card2);
+
+  const card3 = createEl("div", "change-card wide");
+  card3.appendChild(createEl("small", null, "最近解析套餐"));
+  card3.appendChild(createEl("strong", null,
+    recentPlans.length ? recentPlans.map((plan) => plan.name).join("、") : "等待官方同步数据"
+  ));
+  gridDiv.appendChild(card3);
+
+  target.appendChild(gridDiv);
 }
 
 function renderSourceDirectory() {
   const target = document.querySelector("#source-directory");
   if (!target) return;
 
-  target.innerHTML = `
-    <div class="source-directory-head">
-      <div>
-        <h2>官方来源列表</h2>
-        <p>集中列出每个厂商当前使用的官网来源，便于上线后核查和用户交叉验证。</p>
-      </div>
-      <span class="freshness">${providers.length} 个厂商</span>
-    </div>
-    <div class="source-grid">
-      ${providers
-        .map((provider) => {
-          const plans = providerPlans(provider);
-          const planSources = [...new Set(plans.map((plan) => plan.source).filter(Boolean))].slice(0, 2);
-          return `
-            <article class="source-item">
-              <h3>${provider.name}</h3>
-              <p>最近校验 ${provider.updated}</p>
-              <div class="source-links">
-                <a href="${provider.source}" target="_blank" rel="noreferrer">价格 / 文档</a>
-                ${
-                  provider.purchaseUrl
-                    ? `<a href="${provider.purchaseUrl}" target="_blank" rel="noreferrer">购买 / 订阅</a>`
-                    : ""
-                }
-                ${planSources.map((source) => `<a href="${source}" target="_blank" rel="noreferrer">套餐来源</a>`).join("")}
-              </div>
-            </article>
-          `;
-        })
-        .join("")}
-    </div>
-  `;
+  target.innerHTML = "";
+
+  const headDiv = createEl("div", "source-directory-head");
+  const headInfo = document.createElement("div");
+  headInfo.appendChild(createEl("h2", null, "官方来源列表"));
+  headInfo.appendChild(createEl("p", null, "集中列出每个厂商当前使用的官网来源，便于上线后核查和用户交叉验证。"));
+  headDiv.appendChild(headInfo);
+  headDiv.appendChild(createEl("span", "freshness", `${providers.length} 个厂商`));
+  target.appendChild(headDiv);
+
+  const gridDiv = createEl("div", "source-grid");
+  for (const provider of providers) {
+    const plans = providerPlans(provider);
+    const planSources = [...new Set(plans.map((plan) => plan.source).filter(Boolean))].slice(0, 2);
+
+    const article = createEl("article", "source-item");
+    article.appendChild(createEl("h3", null, provider.name));
+    article.appendChild(createEl("p", null, `最近校验 ${provider.updated}`));
+
+    const linksDiv = createEl("div", "source-links");
+
+    const priceLink = createEl("a", null, "价格 / 文档");
+    priceLink.href = provider.source;
+    priceLink.target = "_blank";
+    priceLink.rel = "noopener noreferrer";
+    linksDiv.appendChild(priceLink);
+
+    if (provider.purchaseUrl) {
+      const buyLink = createEl("a", null, "购买 / 订阅");
+      buyLink.href = provider.purchaseUrl;
+      buyLink.target = "_blank";
+      buyLink.rel = "noopener noreferrer";
+      linksDiv.appendChild(buyLink);
+    }
+
+    for (const source of planSources) {
+      const planLink = createEl("a", null, "套餐来源");
+      planLink.href = source;
+      planLink.target = "_blank";
+      planLink.rel = "noopener noreferrer";
+      linksDiv.appendChild(planLink);
+    }
+
+    article.appendChild(linksDiv);
+    gridDiv.appendChild(article);
+  }
+  target.appendChild(gridDiv);
 }
 
 function renderProviderLibrary() {
@@ -1973,67 +1516,109 @@ function renderProviderLibrary() {
       .filter(({ provider, flagship, plans }) => providerMatchesFilter(provider, plans, flagship))
   );
 
-  grid.innerHTML = entries.length
-    ? entries
-        .map(({ provider, flagship, plans }) => {
+  grid.innerHTML = "";
+
+  if (!entries.length) {
+    grid.appendChild(createEl("div", "empty-library", "当前筛选下没有匹配厂商。可以切回「全部」查看完整厂商库。"));
+  } else {
+    for (const { provider, flagship, plans } of entries) {
       const codePlan = codePlanStatus(provider, plans);
       const purchaseUrl = provider.purchaseUrl || provider.source;
       const lowestPlanPrice = minPlanPrice(plans);
 
-      return `
-        <article class="provider-card" id="${provider.id}">
-          <div class="card-main">
-            <div class="card-head">
-              <div class="provider-title">
-                <span class="provider-mark">${provider.name.slice(0, 1)}</span>
-                <div>
-                  <h2 class="provider-name">${provider.name}<button class="anchor-btn" type="button" data-copy-anchor="${provider.id}" aria-label="复制 ${provider.name} 分享链接">#</button></h2>
-                  <div class="meta-row">
-                    ${statusBadge(provider.status)}
-                    <span class="tag">${provider.region}</span>
-                    <span class="tag">更新 ${provider.updated}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="status-stack">
-                <span class="status ${codePlan.key}">${codePlan.label}</span>
-                <div class="meta-row">
-                  <span class="tag">${plans.length || "无"} 个套餐</span>
-                  ${Number.isFinite(lowestPlanPrice) ? `<span class="tag">低至 ${yuan(lowestPlanPrice)}/月</span>` : ""}
-                </div>
-              </div>
-            </div>
+      const article = createEl("article", "provider-card");
+      article.id = provider.id;
 
-            <div class="summary-grid">
-              <div class="metric-box">
-                <small>旗舰模型</small>
-                <strong>${flagship ? flagship.name : "待补充"}</strong>
-              </div>
-              <div class="metric-box">
-                <small>API 价格 / 百万 tokens</small>
-                <strong class="price-line">${apiPriceText(flagship)}</strong>
-              </div>
-            </div>
+      const cardMain = createEl("div", "card-main");
 
-            <section class="plan-section">
-              <h3 class="section-title">订阅 / 套餐</h3>
-              ${
-                plans.length
-                  ? renderPlanList(provider, plans)
-                  : `<p class="empty-plan">${codePlan.label}。当前仅展示官网可核验的订阅或套餐。</p>`
-              }
-            </section>
-          </div>
+      const cardHead = createEl("div", "card-head");
 
-          <div class="card-actions">
-            <a class="source-btn" href="${provider.source}" target="_blank" rel="noreferrer">官方来源</a>
-            <a class="buy-btn" href="${purchaseUrl}" target="_blank" rel="noreferrer">跳转购买<span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-      `;
-    })
-        .join("")
-    : `<div class="empty-library">当前筛选下没有匹配厂商。可以切回“全部”查看完整厂商库。</div>`;
+      const providerTitle = createEl("div", "provider-title");
+      providerTitle.appendChild(createEl("span", "provider-mark", provider.name.slice(0, 1)));
+
+      const titleInfo = document.createElement("div");
+      const providerNameH2 = createEl("h2", "provider-name", provider.name);
+      const anchorBtn = createEl("button", "anchor-btn", "#");
+      anchorBtn.type = "button";
+      anchorBtn.setAttribute("data-copy-anchor", provider.id);
+      anchorBtn.setAttribute("aria-label", `复制 ${provider.name} 分享链接`);
+      providerNameH2.appendChild(anchorBtn);
+      titleInfo.appendChild(providerNameH2);
+
+      const metaRow = createEl("div", "meta-row");
+      metaRow.appendChild(statusBadgeElement(provider.status));
+      metaRow.appendChild(createEl("span", "tag", provider.region));
+      metaRow.appendChild(createEl("span", "tag", `更新 ${provider.updated}`));
+      titleInfo.appendChild(metaRow);
+      providerTitle.appendChild(titleInfo);
+      cardHead.appendChild(providerTitle);
+
+      const statusStack = createEl("div", "status-stack");
+      statusStack.appendChild(createEl("span", `status ${codePlan.key}`, codePlan.label));
+      const stackMetaRow = createEl("div", "meta-row");
+      stackMetaRow.appendChild(createEl("span", "tag", `${plans.length || "无"} 个套餐`));
+      if (Number.isFinite(lowestPlanPrice)) {
+        stackMetaRow.appendChild(createEl("span", "tag", `低至 ${yuan(lowestPlanPrice)}/月`));
+      }
+      statusStack.appendChild(stackMetaRow);
+      cardHead.appendChild(statusStack);
+      cardMain.appendChild(cardHead);
+
+      const summaryGrid = createEl("div", "summary-grid");
+
+      const modelMetric = createEl("div", "metric-box");
+      modelMetric.appendChild(createEl("small", null, "旗舰模型"));
+      const modelStrong = createEl("strong", null);
+      if (flagship) {
+        modelStrong.appendChild(document.createTextNode(flagship.name + " "));
+        const detailBtn = createEl("button", "small-btn", "详情");
+        detailBtn.setAttribute("data-detail", flagship.id);
+        detailBtn.setAttribute("aria-label", `查看 ${flagship.name} 详情`);
+        modelStrong.appendChild(detailBtn);
+      } else {
+        modelStrong.textContent = "待补充";
+      }
+      modelMetric.appendChild(modelStrong);
+      summaryGrid.appendChild(modelMetric);
+
+      const priceMetric = createEl("div", "metric-box");
+      priceMetric.appendChild(createEl("small", null, "API 价格 / 百万 tokens"));
+      priceMetric.appendChild(createEl("strong", "price-line", apiPriceText(flagship)));
+      summaryGrid.appendChild(priceMetric);
+      cardMain.appendChild(summaryGrid);
+
+      const planSection = createEl("section", "plan-section");
+      planSection.appendChild(createEl("h3", "section-title", "订阅 / 套餐"));
+      if (plans.length) {
+        const planListEl = renderPlanList(provider, plans);
+        if (planListEl) planSection.appendChild(planListEl);
+      } else {
+        planSection.appendChild(createEl("p", "empty-plan", `${codePlan.label}。当前仅展示官网可核验的订阅或套餐。`));
+      }
+      cardMain.appendChild(planSection);
+      article.appendChild(cardMain);
+
+      const cardActions = createEl("div", "card-actions");
+      const sourceBtn = createEl("a", "source-btn", "官方来源");
+      sourceBtn.href = provider.source;
+      sourceBtn.target = "_blank";
+      sourceBtn.rel = "noopener noreferrer";
+      cardActions.appendChild(sourceBtn);
+
+      const buyBtn = createEl("a", "buy-btn");
+      buyBtn.href = purchaseUrl;
+      buyBtn.target = "_blank";
+      buyBtn.rel = "noopener noreferrer";
+      buyBtn.textContent = "跳转购买";
+      const arrowSpan = createEl("span", null, "→");
+      arrowSpan.setAttribute("aria-hidden", "true");
+      buyBtn.appendChild(arrowSpan);
+      cardActions.appendChild(buyBtn);
+      article.appendChild(cardActions);
+
+      grid.appendChild(article);
+    }
+  }
 
   renderSyncPanel();
   renderChangePanel();
@@ -2049,6 +1634,155 @@ function showToast(message) {
   showToast.timer = window.setTimeout(() => {
     toast.classList.remove("show");
   }, 1600);
+}
+
+function createEl(tag, className, text) {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  if (text != null) el.textContent = text;
+  return el;
+}
+
+function appendField(container, label, value) {
+  const row = createEl("div");
+  row.appendChild(createEl("dt", null, label));
+  const dd = createEl("dd");
+  if (typeof value === "string" && value.startsWith("http")) {
+    const a = createEl("a", "source-link");
+    a.href = value;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = value;
+    dd.appendChild(a);
+  } else {
+    dd.textContent = value ?? "-";
+  }
+  row.appendChild(dd);
+  container.appendChild(row);
+}
+
+function renderModalContent(item, provider) {
+  const content = document.createElement("div");
+
+  const head = createEl("div", "modal-content-head");
+  const metaRow = createEl("div", "meta-row");
+  metaRow.appendChild(createEl("span", `status ${item.status}`, statusLabels[item.status] || item.status));
+  if (item.scenarios) {
+    item.scenarios.slice(0, 3).forEach((s) => {
+      metaRow.appendChild(createEl("span", "tag", scenarioLabels[s] || s));
+    });
+  }
+  head.appendChild(metaRow);
+  const modalTitle = createEl("h2", null, `${provider.name} · ${item.name}`);
+  modalTitle.id = "modal-title";
+  head.appendChild(modalTitle);
+  content.appendChild(head);
+
+  const fields = createEl("dl", "modal-fields");
+
+  if (item.type === "api") {
+    appendField(fields, "类型", "API 按量计费");
+    appendField(fields, "输入价", item.input != null ? `¥${item.input} / 百万 tokens` : item.priceText || "待同步");
+    appendField(fields, "输出价", item.output != null ? `¥${item.output} / 百万 tokens` : "-");
+    appendField(fields, "缓存命中", item.cache != null ? `¥${item.cache} / 百万 tokens` : "-");
+    if (item.originalInput != null) {
+      appendField(fields, "原价", `输入 ¥${item.originalInput} / 输出 ¥${item.originalOutput} / 缓存 ¥${item.originalCache}`);
+    }
+    appendField(fields, "上下文", item.context ?? "-");
+    appendField(fields, "最大输出", item.maxOutput ?? "-");
+    appendField(fields, "质量评分", item.quality != null ? `${item.quality}/100` : "-");
+    appendField(fields, "易用评分", item.ease != null ? `${item.ease}/100` : "-");
+  } else {
+    appendField(fields, "类型", item.planType || "订阅套餐");
+    appendField(fields, "首月", item.firstMonth ?? "-");
+    appendField(fields, "包月", item.recurringMonthly ?? (item.monthly != null ? `¥${item.monthly}` : "-"));
+    appendField(fields, "包季", item.quarterly ?? "-");
+    appendField(fields, "包年", item.yearly ?? "-");
+    appendField(fields, "5小时请求", item.request5h ?? "-");
+    appendField(fields, "每周请求", item.weeklyRequests ?? "-");
+    appendField(fields, "每月请求", item.monthlyRequests ?? "-");
+    appendField(fields, "Token 上限", item.tokenLimit ?? "-");
+    appendField(fields, "额度说明", item.quota ?? "-");
+    if (item.tools?.length) appendField(fields, "支持工具", item.tools.join(" / "));
+    if (item.seats) appendField(fields, "座位", item.seats);
+  }
+
+  if (item.discount) {
+    appendField(fields, "优惠", `${item.discount.label}${item.discount.end ? `，${item.discount.end}` : ""}`);
+  }
+  appendField(fields, "状态", statusLabels[item.status] || item.status);
+  appendField(fields, "最近更新", item.updated ?? "-");
+  appendField(fields, "官方来源", item.source ?? "-");
+  content.appendChild(fields);
+
+  if (item.strengths?.length) {
+    const section = createEl("div", "modal-section");
+    section.appendChild(createEl("h3", null, "优势"));
+    const ul = createEl("ul");
+    item.strengths.forEach((s) => ul.appendChild(createEl("li", null, s)));
+    section.appendChild(ul);
+    content.appendChild(section);
+  }
+
+  if (item.weaknesses?.length) {
+    const section = createEl("div", "modal-section");
+    section.appendChild(createEl("h3", null, "注意"));
+    const ul = createEl("ul");
+    item.weaknesses.forEach((s) => ul.appendChild(createEl("li", null, s)));
+    section.appendChild(ul);
+    content.appendChild(section);
+  }
+
+  const actions = createEl("div", "modal-actions");
+  if (item.source) {
+    const sourceBtn = createEl("a", "source-btn");
+    sourceBtn.href = item.source;
+    sourceBtn.target = "_blank";
+    sourceBtn.rel = "noopener noreferrer";
+    sourceBtn.textContent = "查看官方来源";
+    actions.appendChild(sourceBtn);
+  }
+  const providerObj = providers.find((p) => p.id === item.providerId);
+  if (providerObj?.purchaseUrl) {
+    const buyBtn = createEl("a", "buy-btn");
+    buyBtn.href = providerObj.purchaseUrl;
+    buyBtn.target = "_blank";
+    buyBtn.rel = "noopener noreferrer";
+    buyBtn.textContent = "跳转购买";
+    const arrowSpan = document.createElement("span");
+    arrowSpan.setAttribute("aria-hidden", "true");
+    arrowSpan.textContent = "→";
+    buyBtn.appendChild(arrowSpan);
+    actions.appendChild(buyBtn);
+  }
+  content.appendChild(actions);
+
+  return content;
+}
+
+function openDetailModal(itemId) {
+  const item = catalog.find((entry) => entry.id === itemId);
+  if (!item) return;
+  const provider = providers.find((p) => p.id === item.providerId);
+  const modal = document.querySelector("#detail-modal");
+  const content = document.querySelector("#modal-content");
+  if (!modal || !content) return;
+
+  content.innerHTML = "";
+  content.appendChild(renderModalContent(item, provider || { name: "未知厂商" }));
+  modal.hidden = false;
+  window.requestAnimationFrame(() => modal.classList.add("show"));
+  document.body.style.overflow = "hidden";
+}
+
+function closeDetailModal() {
+  const modal = document.querySelector("#detail-modal");
+  if (!modal) return;
+  modal.classList.remove("show");
+  window.setTimeout(() => {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }, 200);
 }
 
 function bindLibraryControls() {
@@ -2086,6 +1820,12 @@ function bindLibraryControls() {
       return;
     }
 
+    const detailButton = event.target.closest("[data-detail]");
+    if (detailButton) {
+      openDetailModal(detailButton.dataset.detail);
+      return;
+    }
+
     const button = event.target.closest("[data-toggle-plans]");
     if (!button) return;
     const providerId = button.dataset.togglePlans;
@@ -2102,20 +1842,13 @@ async function boot() {
   bindLibraryControls();
   renderProviderLibrary();
 
-  try {
-    const controller = new AbortController();
-    const timeoutId = window.setTimeout(() => controller.abort(), 3000);
-    const response = await fetch("./data/official-price-data.json", { cache: "no-store", signal: controller.signal });
-    window.clearTimeout(timeoutId);
-    if (response.ok) {
-      applyOfficialData(await response.json());
-    } else {
-      state.officialDataError = `HTTP ${response.status}`;
-    }
-  } catch (error) {
-    state.officialDataError = error?.name === "AbortError" ? "加载超时" : error?.message || "网络错误";
-    console.warn("官方价格数据加载失败，使用内置回退数据。", error);
-  }
+  document.querySelector("#modal-close")?.addEventListener("click", closeDetailModal);
+  document.querySelector("#detail-modal")?.addEventListener("click", (event) => {
+    if (event.target === event.currentTarget) closeDetailModal();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeDetailModal();
+  });
 
   renderProviderLibrary();
 

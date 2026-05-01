@@ -2,6 +2,10 @@
 
 一个面向国内用户的 **AI API 价格对比和 Code Plan 推荐平台**，专注于简化 AI 大模型服务的购买决策。
 
+## 🌐 在线体验
+
+👉 **[立即打开厂商库](https://yfwangning.github.io/coding-plan-/)** ← 查看完整的 AI API 厂商对比和套餐推荐
+
 ## 🎯 项目定位
 
 通过集中、结构化、实时同步官方价格数据，帮助开发者和企业快速找到最适合的 AI 大模型厂商和套餐方案。
@@ -37,7 +41,7 @@ coding-plan-/
 - HTML5 + CSS3 + Vanilla JavaScript (No Framework)
 - Node.js + JavaScript (爬虫脚本)
 - GitHub Actions (自动化)
-- 静态站点部署 (Netlify / Cloudflare Pages)
+- GitHub Pages (静态站点部署)
 
 ## 🚀 快速开始
 
@@ -146,7 +150,7 @@ node scripts/update-official-data.mjs
 
 已配置适用于 Netlify / Cloudflare Pages 的：
 - CSP 内容安全策略
-- X-Frame-Options 防点击劫���
+- X-Frame-Options 防点击劫持
 - 缓存策略
 
 #### 搜索引擎优化
@@ -161,9 +165,9 @@ node scripts/update-official-data.mjs
 
 | 平台 | 特点 | 适合场景 |
 |------|------|--------|
+| GitHub Pages | 免费、内置、无需配置 | ⭐ 当前部署方案 |
 | Netlify | GitHub 原生集成、自动部署 | 开源项目、快速迭代 |
 | Cloudflare Pages | 全球 CDN、边缘计算 | 高性能、国际用户 |
-| GitHub Pages | 免费、内置 | 文档、演示站点 |
 
 ## 📋 已实现功能
 
@@ -212,4 +216,4 @@ MIT License
 
 **最后更新**: 2026-05-01  
 **数据源**: 官方价格页 + GitHub Actions 自动同步  
-**部署方案**: 静态站点（Netlify/Cloudflare Pages）
+**在线地址**: https://yfwangning.github.io/coding-plan-/

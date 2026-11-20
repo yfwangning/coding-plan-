@@ -1,6 +1,6 @@
 # Official Price Update Report
 
-Generated at: 2026-11-19T08:22:55.400Z
+Generated at: 2026-11-20T08:03:14.965Z
 
 ## Summary
 
@@ -49,20 +49,20 @@ Generated at: 2026-11-19T08:22:55.400Z
 
 ## Source Health
 
-- DeepSeek / api-pricing: HTTP 200, 2132 chars, parser=deepseekPricing
+- DeepSeek / api-pricing: HTTP 200, 2131 chars, parser=deepseekPricing
 - 智谱 AI / api-pricing: HTTP 200, 125 chars, parser=none
 - 智谱 AI / code-plan-subscription: HTTP 200, 125 chars, parser=none
-- Kimi / api-pricing: HTTP 200, 44889 chars, parser=none
+- Kimi / api-pricing: HTTP 200, 44882 chars, parser=none
 - Kimi / membership-plan-subscription: HTTP 200, 35 chars, parser=none
-- MiniMax / pricing-overview: HTTP 200, 109135 chars, parser=none
+- MiniMax / pricing-overview: HTTP 200, 112035 chars, parser=none
 - MiniMax / token-plan: HTTP 200, 429 chars, parser=none
 - 美团 LongCat / official-entry: HTTP 200, 4059 chars, parser=none
 - 美团 LongCat / api-docs: HTTP 200, 2345 chars, parser=none
 - 小米 MiMo / token-plan-subscription: HTTP 404, 37 chars, parser=mimoTokenPlan
 - 小米 MiMo / api-pricing: HTTP 404, 37 chars, parser=mimoPricing
 - 火山方舟 / code-plan-subscription: HTTP 200, 5567 chars, parser=none
-- 阿里百炼 / model-release: HTTP 200, 14339 chars, parser=none
-- 阿里百炼 / api-pricing: HTTP 200, 85785 chars, parser=none
+- 阿里百炼 / model-release: HTTP 200, 14420 chars, parser=none
+- 阿里百炼 / api-pricing: HTTP 200, 85918 chars, parser=none
 - 阿里百炼 / code-plan: HTTP 200, 3709 chars, parser=none
 - 阿里百炼 / token-plan: HTTP 200, 6518 chars, parser=aliyunTokenPlan
 - 百度千帆 / code-plan: HTTP 200, 2076 chars, parser=baiduCodingPlan
